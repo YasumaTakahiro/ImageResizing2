@@ -11,7 +11,7 @@ logger.propagate = False
 logger.debug('hello')
 
 
-#aaahh
+#aaahhｆｄｆ
 class GetPath:
     def __init__(self):
         # カレントディレクトを設定
