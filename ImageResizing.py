@@ -29,4 +29,4 @@ class ImageResizing:
 
 
 if __name__ == "__main__":
-    ImageResizing(directry='images/*', width=3000, height=2000)
+    ImageResizing(directry='images/*', width=3000, height=2001)
