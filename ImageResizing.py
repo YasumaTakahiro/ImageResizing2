@@ -12,9 +12,9 @@ logger.propagate = False
 
 
 class ImageResizing:
-    def __init__(self, directry, saveDirectry, width, height):
+    def __init__(self, directory, saveDirectory, width, height):
         # フォルダパスから全てのファイルを取得
-        files = glob(f"{directry}/*")
+        files = glob(f"{directory}/*")
         logger.debug(f"以下のファイルのサイズを変更します{files}")
 
         # フォルダパス内の画像ファイルをすべて指定のサイズにリサイズし、
@@ -25,12 +25,12 @@ class ImageResizing:
             if ext in [".jpg", ".JPG", ".png", ".PNG", ".gif", ".GIF"]:
                 img = Image.open(f)
                 img_resize = img.resize((width, height))
-                img_resize.save(f"{saveDirectry}/{basename}")
+                img_resize.save(f"{saveDirectory}/{basename}")
 
         logger.debug("変更終了")
 
 
 if __name__ == "__main__":
-    ImageResizing(directry=r"C:\Users\20191108-5\Documents\python_project\ImageResizing2\撮影",
-                  saveDirectry=r"C:\Users\20191108-5\Documents\python_project\ImageResizing2\保存",
+    ImageResizing(directory=os.getcwd() + f"\撮影",
+                  saveDirectory=os.getcwd() + f"\保存",
                   width=32, height=32)
